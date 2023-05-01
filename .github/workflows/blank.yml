@@ -27,9 +27,7 @@ jobs:
         run: echo c
 
       - name: print details
-        env:
-          DETAILS: ${{ toJson(github.event) }}
-        run: echo $DETAILS
+        run: echo ${{ github.event }}
         
       - name: print inputs
         env:
