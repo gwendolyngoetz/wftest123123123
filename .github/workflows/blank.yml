@@ -18,10 +18,19 @@ jobs:
     steps:
       - name: a
         run: echo a
-
+        
       - name: b
         if: ${{ github.event.inputs.probers_enabled == 'true' }}
         run: echo b
         
       - name: c
         run: echo c
+
+      - name: print details
+        run: echo ${{ github.events }}
+        
+      - name: print inputs
+        run: echo ${{ github.events.inputs }}
+        
+      - name: print schedule
+        run: echo ${{ github.events.schedule }}
