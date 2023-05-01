@@ -27,13 +27,21 @@ jobs:
         run: echo c
 
       - name: print details
-        run: echo ${{ toJson(github.events) }}
+        env:
+          DETAILS: ${{ toJson(github.events) }}
+        run: echo $DETAILS
         
       - name: print inputs
-        run: echo ${{ toJson(github.events.inputs) }}
+        env:
+          DETAILS: ${{ toJson(github.events.inputs) }}
+        run: echo $DETAILS
         
       - name: print inputs probers_enabled
-        run: echo ${{ toJson(github.events.inputs.probers_enabled) }}
+        env:
+          DETAILS: ${{ toJson(github.events.inputs.probers_enabled) }}
+        run: echo $DETAILS
         
       - name: print schedule
-        run: echo ${{ toJson(github.events.schedule) }}
+        env:
+          DETAILS: ${{ toJson(github.events.schedule) }}
+        run: echo $DETAILS
