@@ -30,11 +30,11 @@ jobs:
         run: echo ${{ github.event }}
         
       - name: print inputs
-        run: echo ${{ toJson(github.event.inputs) }}
+        run: echo ${{ github.event.inputs }}
         
       - name: print inputs probers_enabled
         env:
-          DETAILS: ${{ toJson(github.event.inputs.probers_enabled) }}
+          DETAILS: ${{ github.event.inputs.probers_enabled }}
         run: echo $DETAILS
         
       - name: print schedule
