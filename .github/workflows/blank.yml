@@ -20,24 +20,8 @@ jobs:
         run: echo a
         
       - name: b
-        if: ${{ github.event.inputs.probers_enabled == 'true' }}
+        if: github.event.inputs == null) || (github.event.inputs.probers_enabled == 'true'
         run: echo b
         
       - name: c
         run: echo c
-
-      - name: print details
-        run: echo ${{ github.event }}
-        
-      - name: print inputs
-        run: echo ${{ github.event.inputs }}
-        
-      - name: print inputs probers_enabled
-        env:
-          DETAILS: ${{ github.event.inputs.probers_enabled }}
-        run: echo $DETAILS
-        
-      - name: print schedule
-        env:
-          DETAILS: ${{ toJson(github.event.schedule) }}
-        run: echo $DETAILS
