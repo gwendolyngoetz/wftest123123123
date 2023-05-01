@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  workflow_dispatch:
+    inputs:
+      probers_enabled:
+        description: 'Runs probers when checked'
+        default: true
+        required: true
+        type: boolean
+  schedule:
+    - cron: '*/2 * * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: a
+        run: echo a
+
+      - name: b
+        if: ${{ github.event.inputs.probers_enabled == 'true' }}
+        run: echo b
+        
+      - name: c
+        run: echo c
