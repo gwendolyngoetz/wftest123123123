@@ -28,20 +28,20 @@ jobs:
 
       - name: print details
         env:
-          DETAILS: ${{ toJson(github.events) }}
+          DETAILS: ${{ toJson(github.event) }}
         run: echo $DETAILS
         
       - name: print inputs
         env:
-          DETAILS: ${{ toJson(github.events.inputs) }}
+          DETAILS: ${{ toJson(github.event.inputs) }}
         run: echo $DETAILS
         
       - name: print inputs probers_enabled
         env:
-          DETAILS: ${{ toJson(github.events.inputs.probers_enabled) }}
+          DETAILS: ${{ toJson(github.event.inputs.probers_enabled) }}
         run: echo $DETAILS
         
       - name: print schedule
         env:
-          DETAILS: ${{ toJson(github.events.schedule) }}
+          DETAILS: ${{ toJson(github.event.schedule) }}
         run: echo $DETAILS
