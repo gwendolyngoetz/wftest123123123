@@ -27,10 +27,13 @@ jobs:
         run: echo c
 
       - name: print details
-        run: echo ${{ github.events }}
+        run: echo ${{ toJson(github.events) }}
         
       - name: print inputs
-        run: echo ${{ github.events.inputs }}
+        run: echo ${{ toJson(github.events.inputs) }}
+        
+      - name: print inputs probers_enabled
+        run: echo ${{ toJson(github.events.inputs.probers_enabled) }}
         
       - name: print schedule
-        run: echo ${{ github.events.schedule }}
+        run: echo ${{ toJson(github.events.schedule) }}
