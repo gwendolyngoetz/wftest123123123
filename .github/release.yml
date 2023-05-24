@@ -4,6 +4,10 @@ changelog:
       - ignore
 
   categories:
+    - title: Database
+      labels:
+        - db
+        
     - title: Features
       labels:
         - feature
@@ -14,11 +18,7 @@ changelog:
 
     - title: Dependencies
       labels:
-        - dependencies
-
-    - title: Database
-      labels:
-        - db
+        - dependencie
 
     - title: Other changes
       labels:
